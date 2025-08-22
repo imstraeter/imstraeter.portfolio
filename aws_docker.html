@@ -1,0 +1,245 @@
+<!DOCTYPE HTML>
+<!--
+	Prologue by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Github Portfolio</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+			<div id="header">
+
+				<div class="top">
+
+					<!-- Logo -->
+						<div id="logo">
+							<span class="image avatar48"><img src="images/avatar.jpg" alt="" /></span>
+							<h1 id="title">Chris Straeter</h1>
+							<p>Cloud Engineer</p>
+						</div>
+
+					<!-- Nav -->
+						<nav id="nav">
+							<ul>
+								<li><a href="index.html#top" id="top-link"><span class="icon solid fa-home">Intro</span></a></li>
+								<li><a href="index.html#portfolio" id="portfolio-link"><span class="icon solid fa-th">Portfolio</span></a></li>
+								<!-- <li><a href="index.html#about" id="about-link"><span class="icon solid fa-user">About Me</span></a></li>
+								<li><a href="index.html#contact" id="contact-link"><span class="icon solid fa-envelope">Contact</span></a></li>
+                            -->
+							</ul>
+						</nav>
+
+				</div>
+
+				<div class="bottom">
+
+					<!-- Social Icons -->
+						<ul class="icons">
+							<!-- <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+							<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+							<li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li> -->
+							<li><a href="https://www.linkedin.com/in/chrisstraeter" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+							<li><a href="mailto:imstraeter@gmail.com?subject=Re: Your Github Portfolio" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+						</ul>
+
+				</div>
+
+			</div>
+
+		<!-- Main  THIS IS WHERE TO UPDATE YOUR DOCUMENTATION-->
+			<div id="main">
+
+				<!-- Intro -->
+					<section id="top" class="two">
+						<div class="container">
+
+							<header>
+								<h2 class="alt">AWS Project <br/ >EC2 + Docker</a></h2>
+								<!-- <p>In this project I setup an EC2 instance and <br />
+								deploy an containerized application using Docker.</p> -->
+							</header>
+
+							<!-- <footer>
+								<a href="#portfolio" class="button scrolly">Magna Aliquam</a>
+							</footer> -->
+
+						</div>
+					</section>
+
+                <!-- Body -->
+                    <section id="body" class="two">
+                        <div class="container">
+                        <h2 class="alt" style="text-align:left">Objectives</h2>
+                        </div>
+                    <div class="container">
+                        <p style="text-align:left">1. Deploy a web application on PaaS (Elastic Beanstalk) using a CI/CD pipeline 
+                            (CodePipeline) after fetching the source code from a version control system (GitHub).
+                            <br />
+                            2. Push an update to the application after deployment and observe the automatic execution
+                            of the pipeline.
+                            <br />
+                        </p>
+                    </div>
+                        <div class="container">
+                            <h2 class="alt" style="text-align:left">Preperations</h2>
+                        </div>
+                    <div class="container">
+                        <p style="text-align:left">1. Create an index.html file or download the one attached to my repo.
+                            <br />
+                            2. Navigate to the EC2 management Condsole and create a new key-pair file to be used later. EC2 instance creation isn't required.
+                            <br />
+                            <img src="images/CreateKeypair.jpg" alt="Create Keypair" width="978" height="514"/>
+
+                        </p>
+
+                         <p style="text-align:left">3. Goto the IAM Console -> Roles -> Create Role.
+                            <br />
+                            4. Select AWS Service and under Trusted Entity Type select EC2 under the Use Case section.
+                            <br />
+                            <img src="images/EC2role-1.jpg" alt="Create Keypair" width="980" height="567"/>
+
+                        </p>
+
+                         <p style="text-align:left">5. Under the Add Permissions search box find AWSElasticBeanstalkWebTier and add it. This will allow Elastic Beanstalk 
+                            to create the EC2 instance since it will have the role assigned in the next step. 
+                            <br />
+                            
+                            <img src="images/EC2role-2.jpg" alt="Create Keypair" width="989" height="395"/>
+                        </p>
+
+                         <p style="text-align:left">6. Enter a role name and click create role.
+                            <br />
+                            
+                            <img src="images/EC2role-3.jpg" alt="Create Keypair" width="980" height="372"/>
+
+                        </p>
+
+                        <h2 class="alt" style="text-align:left">Setup Gethub Repo</h2>
+                         <p style="text-align:left">1. Log into your Github and under your profile choose Your Repositories.
+                            <br />
+                            2. Click Create a new repository. Name it and set it to Private.
+                            <br />
+                            3. Navigate to your repo and click the add file button. Add the index.html file created earlier.
+                            <br />
+                            <img src="images/GitIndex.jpg" alt="Create Keypair" width="997" height="417"/>
+
+                        </p>
+
+                        <h2 class="alt" style="text-align:left">Elastic Beanstalk</h2>
+                         <p style="text-align:left">1. Back in your AWS account, navigate to Elastic Beanstalk and click Create Application.
+                            <br />
+                            2. Enter the options shown below.
+                            <br />
+                             <img src="images/beanstalk01.jpg" alt="Create Keypair" width="997" height="551"/>
+                             <br />
+                             <img src="images/beanstalk02.jpg" alt="Create Keypair" width="997" height="448"/>
+                             <br />
+                             <img src="images/beanstalk03.jpg" alt="Create Keypair" width="997" height="228"/>
+                             3. Click next and on the Configure Service Access page enter as shown.<br />
+                              &nbsp &nbsp Note: This is where we will reference the key pair prepared earlier.
+                            <br />
+                             <img src="images/beanstalk04.jpg" alt="Create Keypair" width="997" height="443"/>
+                             <br />
+                             4. Skip ahead to the Review step. Click Create.
+                             <img src="images/beanstalk05.jpg" alt="Create Keypair" width="997" height="561"/>
+                             <br />
+                             <img src="images/beanstalk06.jpg" alt="Create Keypair" width="997" height="181"/>
+                             5. Once the environment setup is completed, you'll see the screen shown below.
+                             <img src="images/beanstalk07.jpg" alt="Create Keypair" width="997" height="359"/>
+                              <br />
+                             6. Click on the URL in the Domain field to verify the environment is working. It will open a tab in your web browser showing the page below.
+                             <br />
+                             &nbsp &nbsp We now have an EC2 instance running serving our website!
+                             <img src="images/beanstalk08.jpg" alt="Create Keypair" width="997" height="452"/>
+                        </p>
+
+                        <h2 class="alt" style="text-align:left">Setup the CI/CD Pipeline</h2>
+                         <p style="text-align:left">1. Navigate to CodePipeline in the AWS Management Console and click Create Pipeline.
+                            <br />                            
+                            2. On Step 1 choose Build Custom Pipeline.
+                            <br />
+                            <img src="images/CustomPipeline00.jpg" alt="Create Keypair" width="997" height="300"/>
+                            3. Enter the values for the pipeline name and role.
+                            <br />
+                            <img src="images/CustomPipeline01.jpg" alt="Create Keypair" width="997" height="505"/>
+                            4. For the Source provider choose Github via Oauth. 
+                            <br />
+                            <img src="images/CustomPipeline02.jpg" alt="Create Keypair" width="997" height="616"/>
+                            5. Follow the steps to create the connection to your Github repo.
+                            <br />
+                            <img src="images/PipelineGithub.jpg" alt="Create Keypair" width="997" height="536"/>
+                            6. Proceed to step 6, add deploy stage. Enter as shown.
+                            <br />
+                            <img src="images/CustomPipeline03.jpg" alt="Create Keypair" width="997" height="600"/>
+                            7. If everything goes well, you should see both the source and deploy stages turn green.
+                            <br />
+                            &nbsp &nbsp Note: I did have an error when I first deployed. It was due to a missing privilege<br /> 
+                            &nbsp &nbsp which I added to the role to resolve the deploy error. 
+                            <br />
+                            <img src="images/CustomPipeline04.jpg" alt="Create Keypair" width="997" height="537"/>
+                            8. Click on AWS Elastic Beanstalk  in the Deploy stage tile and it will take you back to the beanstalk 
+                            <br />
+                            &nbsp &nbsp environments. Click the URL in the Domain field.
+                            <br />
+                            <img src="images/CustomPipeline05.jpg" alt="Create Keypair" width="997" height="341"/>
+                            9. You should see your new webpage deployed using Elastic Beanstalk!  
+                            <br />
+                            <img src="images/CustomPipeline06.jpg" alt="Create Keypair" width="997" height="336"/>
+                            <br />
+                            10. Now we can test updating the code in the Git repo to see the CI/CD pipeline in action.  
+                            <br />
+                            &nbsp &nbsp Open the index.html file in a code editor and edit some text. The one provided within 
+                            <br />
+                            &nbsp &nbsp github is fine for this.
+                            <br />
+                            <img src="images/UpdateHTML.jpg" alt="Create Keypair" width="728" height="448"/>
+                            <br />
+                            11. Check on the CI/CD pipeline  to see it in action.  
+                            <br />
+                            &nbsp &nbsp Once it says Succeeded as shown below we can verify in the browser.
+                            <br />
+                            <img src="images/PipelineUpdate.jpg" alt="Create Keypair" width="997" height="305"/>
+                            <br />
+                            12. Now we can refresh the browser to see the changes reflected.  
+                            <br />
+                            <img src="images/UpdatedHTML.jpg" alt="Create Keypair" width="997" height="436"/>
+                            <br />
+
+                        </p>
+
+
+                    </div>
+
+
+                    </section>
+
+			</div>
+
+		<!-- Footer -->
+			<div id="footer" >
+
+				<!-- Copyright -->
+					<ul class="copyright">
+						<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
