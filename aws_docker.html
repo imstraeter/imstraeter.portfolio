@@ -86,36 +86,35 @@
                         </p>
                     </div>
                         <div class="container">
-                            <h2 class="alt" style="text-align:left">Preperations</h2>
+                            <h2 class="alt" style="text-align:left">Create the EC2 Inctance</h2>
                         </div>
                     <div class="container">
-                        <p style="text-align:left">1. Create an index.html file or download the one attached to my repo.
+                        <p style="text-align:left">1. Launch a t2.medium Ubuntu instance.
                             <br />
-                            2. Navigate to the EC2 management Condsole and create a new key-pair file to be used later. EC2 instance creation isn't required.
+                            2. Add a security group rule. Type "http", source type "Anywhere" so the website can be accessed.
                             <br />
-                            <img src="images/CreateKeypair.jpg" alt="Create Keypair" width="978" height="514"/>
+                            <img src="images/awscontainer/101.jpg" alt="Create EC2" width="980" height="470"/>
 
                         </p>
 
-                         <p style="text-align:left">3. Goto the IAM Console -> Roles -> Create Role.
+                         <p style="text-align:left">2. Select the instance and connect to it.
                             <br />
-                            4. Select AWS Service and under Trusted Entity Type select EC2 under the Use Case section.
+                            3. Create a script to install Docker.
                             <br />
-                            <img src="images/EC2role-1.jpg" alt="Create Keypair" width="980" height="567"/>
+                            <img src="images/awscontainer/102.jpg" alt="Create Docker script" width="980" height="442"/>
 
                         </p>
 
-                         <p style="text-align:left">5. Under the Add Permissions search box find AWSElasticBeanstalkWebTier and add it. This will allow Elastic Beanstalk 
-                            to create the EC2 instance since it will have the role assigned in the next step. 
+                         <p style="text-align:left">4. Verify Docker installation by running the command - "docker version". 
                             <br />
                             
-                            <img src="images/EC2role-2.jpg" alt="Create Keypair" width="989" height="395"/>
+                            <img src="images/awscontainer/103.jpg" alt="Verify Docker install" width="980" height="430"/>
                         </p>
 
-                         <p style="text-align:left">6. Enter a role name and click create role.
+                         <p style="text-align:left">5. Go back to the EC2 instance and copy the public IP address. Paste it into a new browser tab.
                             <br />
                             
-                            <img src="images/EC2role-3.jpg" alt="Create Keypair" width="980" height="372"/>
+                            <img src="images/awscontainer/104.jpg" alt="Access webpage" width="980" height="609"/>
 
                         </p>
 
